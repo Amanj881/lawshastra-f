@@ -1,20 +1,15 @@
 import logo from './logo.svg';
 import './assets/main.css'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Index from './user/'
 
 function App() {
   return (
-    <div className="">
-      <div className="text-6xl text-center">
-        <a
-          className="App-link"
-          href="https://lawshastra.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LawShastra
-        </a>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={Index} />
+      </Switch>
+    </Router>
   );
 }
 
