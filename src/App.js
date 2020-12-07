@@ -3,21 +3,17 @@ import './assets/main.css'
 
 function App() {
   return (
-    <div className="bg-red-800">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="">
+      <div className="text-6xl text-center">
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://lawshastra.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          LawShastra
         </a>
-      </header>
+      </div>
     </div>
   );
 }
