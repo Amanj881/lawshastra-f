@@ -5,7 +5,7 @@ function Card({label,cardData}) {
 
 	  const cardContent = cardData.map((data,i)=>{
         return(<div className="p-4 md:w-1/3" key={i}>
-        <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:skew-y-12 " >
+        <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:border-8 hover:shadow-full hover:-translate-y-1 hover:skew-y-12 " >
          		<img className="lg:h-48 md:h-36 w-full object-cover object-center" src={data.img} alt="blog" />
           <div className="p-6">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">{data.category}</h2>

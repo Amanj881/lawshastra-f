@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Header from '../components/Header/Header.js'
 import Heros from '../components/Heros/Hero.js'
 import Card from '../components/Card/Card.js'
@@ -8,20 +8,6 @@ import Motion from '../components/Motion/Motion.js'
 import BlogCard from '../components/Card/Card2.js'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 
-const headerOptions = [
-{
-	label:'Home',
-	value:'home'
-},
-{
-	label:'Blogs',
-	value:'blog',
-},
-{
-	label:'Question Bank',
-	value:'question-bank'
-},
-]
 
 const cardData = [
 	{
@@ -50,35 +36,83 @@ const cardData = [
 function Index(props) {
 	const { scale } = props;
 
+	const [showBlog, handleShowBlog] = useState(false);
+	const [showCof, handleShowCof] = useState(false);
+ 	const [showWebinar, handleShowWebinar] = useState(false);
+	const [showSeminar, handleShowSeminar] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+    	console.log("df",window.scrollY);
+      if (window.scrollY >0) {
+        handleShowBlog(true);
+      }
+   		else if (window.scrollY > 1200) {
+        handleShowBlog(true);
+      }
+     else if (window.scrollY > 2400) {
+        handleShowBlog(true);
+      }
+     else if (window.scrollY > 3600) {
+        handleShowBlog(true);
+      }
+       else 
+       {
+       	handleShowBlog(false);
+       	
+
+       }
+       	
+    });
+    return () => {
+      window.removeEventListener('scroll');
+    };
+  }, []);
+
+  const backToTop = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  };
+
 	return (
+		<>
 		   
 		<div>
 		<Motion key="header" delay={300} from={"left"}>
 			<Heros />
-			<hr className="h-2 sharow-lg"/>
+			
 			</Motion>
-			<Motion key="blog" delay={2000} from={"right"}>
+			{showBlog &&
+			<Motion key="blog" delay={600} from={"right"}>
 			<Card label="Blog" cardData={cardData}/>
 			</Motion>
-			 <Motion key="cop" delay={2500} from={"bottom"}>
+			}
+			{showBlog &&
+			 <Motion key="cop" delay={900} from={"right"}>
 			<hr className="h-2 sharow-lg"/>
 			<Card label="Call For Paper"  cardData={cardData} />
 			</Motion>
-			<Motion key="webinar" delay={3000} from={"left"}>
+			}
+			{showBlog &&
+			<Motion key="webinar" delay={1200} from={"left"}>
 			<hr className="h-2 sharow-lg"/>
 			<Card label="Webinar"  cardData={cardData}/>
 			</Motion>
-			<Motion key="seminar" delay={3500} from={"top"}>
+		}
+		{showBlog &&
+			<Motion key="seminar" delay={1500} from={"top"}>
 			<hr className="h-2 sharow-lg" />
 			<Card label="Seminars"  cardData={cardData}/>
 			</Motion>
-			<Motion key="footer" delay={4000} from={"left"}>
+		}
+		{showBlog &&
+			<Motion key="footer" delay={1800} from={"left"}>
 			<hr className="h-2 sharow-lg"/>
 			<Footer />
 			</Motion>
-			<BlogCard />
+		}
 		</div>
+
 		
+		</>
 	)
 }
 
