@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogCard from '../components/Card/Card.js'
+import Search from '../components/Search/search.js'
 
 const BlogData = [
 	{
@@ -45,7 +46,8 @@ const BlogData = [
 function Blog() {
 	return (
 		<div>
-				<BlogCard label="Blog" cardData={BlogData}/>
+			<Search/>
+			<BlogCard label="Blog" cardData={BlogData}/>
 		</div>
 	)
 }
