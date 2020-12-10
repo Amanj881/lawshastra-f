@@ -1,11 +1,10 @@
 import React from 'react'
 
 function Card({label,cardData}) {
-		console.log(cardData);
-
-	  const cardContent = cardData.map((data,i)=>{
+		
+	const cardContent = cardData.map((data,i)=>{
         return(<div className="p-4 md:w-1/3" key={i}>
-        <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:border-8 hover:shadow-full hover:-translate-y-1 hover:skew-y-12 " >
+        <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:border-8 hover:shadow-full hover:skew-y-12 " >
          		<img className="lg:h-48 md:h-36 w-full object-cover object-center" src={data.img} alt="blog" />
           <div className="p-6">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">{data.category}</h2>
@@ -38,8 +37,8 @@ function Card({label,cardData}) {
 
 	return (
 		<div>
-			<section className="text-gray-700 body-font">
-  <div className="container px-5 py-24 mx-auto">
+			<section className="text-gray-700 body-font shadow-xl rounded-lg">
+  <div className="container px-5 py-24 mx-auto ">
   	<span className="text-center text-2xl font-bold">{label}</span>
     <div className="flex flex-wrap -m-4">
       

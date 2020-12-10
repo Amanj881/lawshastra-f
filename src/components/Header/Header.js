@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 function Header({headerOptions}) {
     const head = headerOptions.map((header,i)=>{
-        return(<a href ="blogs" className="mr-5 hover:text-gray-900" key={i}>{header.label}</a>)
+        return(<a href ={header.url} className="mr-5 hover:text-gray-900" key={i}>{header.label}</a>)
     })
 	return (
     <header className="text-gray-700 body-font shadow-lg rounded-lg mx-4">

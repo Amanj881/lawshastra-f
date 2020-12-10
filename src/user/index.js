@@ -103,12 +103,11 @@ function Index(props) {
 			<Card label="Seminars"  cardData={cardData}/>
 			</Motion>
 		}
-		{showBlog &&
-			<Motion key="footer" delay={1800} from={"left"}>
+		
 			<hr className="h-2 sharow-lg"/>
-			<Footer />
-			</Motion>
-		}
+			
+			
+		
 		</div>
 
 		

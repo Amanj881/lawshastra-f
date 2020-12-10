@@ -3,7 +3,10 @@ import './assets/main.css'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Index from './user/'
 import Blog from './user/Blog'
+import QB from './user/Question-Bank'
+
 import Header from './components/Header/Header.js'
+import Footer from './components/Footer/Footer.js'
 
 function App() {
 
@@ -15,10 +18,12 @@ function App() {
 {
   label:'Blogs',
   value:'blog',
+  url:'/blogs',
 },
 {
   label:'Question Bank',
-  value:'question-bank'
+  value:'question-bank',
+   url:'/question-bank',
 },
 ]
 
@@ -30,8 +35,9 @@ function App() {
       <Switch>
         <Route path="/" exact component={Index} />
         <Route path="/blogs" exact component={Blog} />
-
+        <Route path="/question-bank" exact component={QB} />
       </Switch>
+      <Footer />
     </Router>
    
   );
