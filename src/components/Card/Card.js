@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Card({label,cardData}) {
+function Card({label,cardData,start,end}) {
 		
-	const cardContent = cardData.map((data,i)=>{
+	const cardContent = cardData.slice(start,end).map((data,i)=>{
         return(<div className="p-4 md:w-1/3" key={i}>
         <div className="h-full border-2 border-gray-200 rounded-lg overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:border-8 hover:shadow-full hover:skew-y-12 " >
          		<img className="lg:h-48 md:h-36 w-full object-cover object-center" src={data.img} alt="blog" />

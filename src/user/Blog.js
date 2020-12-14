@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import BlogCard from '../components/Card/Card.js'
 import Search from '../components/Search/search.js'
+import Pagination from '../components/Pagination/Pagination.js'
 
 const BlogData = [
 	{
@@ -43,11 +44,19 @@ const BlogData = [
 
 
 ]
+
+ 	
 function Blog() {
+
+	const [perPage, setPerPage] = useState(6);
+	const [start, setStart] = useState(0);
+	const [end, setEnd] = useState(perPage);
+
 	return (
 		<div>
 			<Search/>
-			<BlogCard label="Blog" cardData={BlogData}/>
+			<BlogCard label="Blog" cardData={BlogData} start={start} end={end}/>
+			<Pagination />
 		</div>
 	)
 }

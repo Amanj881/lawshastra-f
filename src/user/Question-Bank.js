@@ -1,6 +1,7 @@
 import React from 'react'
 import QBCard from '../components/Card/Card.js'
 import Search from '../components/Search/search.js'
+import Pagination from '../components/Pagination/Pagination.js'
 
 
 const QBData = [
@@ -96,11 +97,12 @@ function QuestionBank() {
         </a>
       </div>
     </div>
-    <button className="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
   </div>
 </section>
+      <Pagination />
 
 		</div>
+    
 	)
 }
 
