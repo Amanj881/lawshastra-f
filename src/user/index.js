@@ -13,19 +13,19 @@ const cardData = [
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/random/720x400',
+		img:'https://source.unsplash.com/random/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/collection/190727/720x400',
+		img:'https://source.unsplash.com/collection/190727/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/user/erondu/720x400',
+		img:'https://source.unsplash.com/user/erondu/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	}
 

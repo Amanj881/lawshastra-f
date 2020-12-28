@@ -1,14 +1,18 @@
+import React,{useState} from 'react'
 import logo from './logo.svg';
 import './assets/main.css'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Index from './user/'
 import Blog from './user/Blog'
 import QB from './user/Question-Bank'
+import Login from './admin/login'
+import Dashboard from './admin/dashboard'
 
 import Header from './components/Header/Header.js'
 import Footer from './components/Footer/Footer.js'
 
 function App() {
+  const [authUser, setAuthUser] = useState(true)
 
   const headerOptions = [
 {
@@ -25,12 +29,46 @@ function App() {
   value:'question-bank',
    url:'/question-bank',
 },
+
+]
+
+ const dropOptions = [
+{
+  label:'Study Material',
+  value:'study-material',
+   url:'/study-material',
+   type:'drop-down',
+   subOption:
+    [
+    {
+    name:'Notes',
+    value:'notes',
+    },
+    {
+    name:'CaseAnalysis',
+    value:'case-analysis',
+  },
+    ],
+},
+{
+  label:'Opportunities',
+  value:'opportunities',
+   url:'/opportunities',
+   type:'drop-down'
+},
+
 ]
 
   return (
-    
-    <Router>
-      <Header headerOptions={headerOptions}/>
+    <>
+    {authUser ?  (<Router>
+      <Switch>
+        <Route path="/login" exact component={Login} />
+        <Route path="/dashboard" exact component={Dashboard} />
+      </Switch>  
+
+    </Router>):(<Router>
+      <Header headerOptions={headerOptions} dropOptions={dropOptions}/>
 
       <Switch>
         <Route path="/" exact component={Index} />
@@ -38,8 +76,10 @@ function App() {
         <Route path="/question-bank" exact component={QB} />
       </Switch>
       <Footer />
-    </Router>
+    </Router>)}
+    
    
+    </>
   );
 }
 

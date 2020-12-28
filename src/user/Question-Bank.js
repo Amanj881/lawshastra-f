@@ -8,37 +8,37 @@ const QBData = [
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/random/720x400',
+		img:'https://source.unsplash.com/random/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/collection/190727/720x400',
+		img:'https://source.unsplash.com/collection/190727/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/user/erondu/720x400',
+		img:'https://source.unsplash.com/user/erondu/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/random/720x400',
+		img:'https://source.unsplash.com/random/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/collection/190727/720x400',
+		img:'https://source.unsplash.com/collection/190727/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	},
 	{
 		category:'category',
 		title:'The Catalyzer',
-		img:'https://source.unsplash.com/user/erondu/720x400',
+		img:'https://source.unsplash.com/user/erondu/350x250',
 		content:'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
 	}
 	]
@@ -54,7 +54,7 @@ function QuestionBank() {
     <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
       
       <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-        <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/collection/190727/720x400" alt="blog" />
+        <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/collection/190727/350x250" alt="blog" />
 
       </div>
       <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
@@ -78,13 +78,13 @@ function QuestionBank() {
         </a>
       </div>
       <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-               <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/random/720x400" alt="blog" />
+               <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/random/350x250" alt="blog" />
 
       </div>
     </div>
     <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
       <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-        <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/user/erondu/720x400" alt="blog" />
+        <img className="lg:h-32 md:h-36 w-32 object-cover object-center rounded-full" src="https://source.unsplash.com/user/erondu/350x250" alt="blog" />
 
       </div>
       <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
