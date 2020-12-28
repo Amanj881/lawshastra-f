@@ -11,7 +11,7 @@ export const Sidebar = ({ width, height, options,label }) => {
  
 
   const list = options.map(parts =>
-    <a href={`/${parts.url}`} key={parts.id}>
+    <a href={parts.url} key={parts.id}>
     <li key={parts.id} className="text-white py-4 flex items-center ml-12" style={{listStyle:"none"}}><span className="mr-4"> {parts.svg}</span><span className="text-gray-400"> {parts.label}</span></li></a>)
 
   const handleLogout = () => {
