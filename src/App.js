@@ -16,7 +16,7 @@ import SideNav from './admin/sideNav'
 import Nav from './components/Navbar/nav'
 
 function App() {
-  const [authUser, setAuthUser] = useState(true)
+  const [authUser, setAuthUser] = useState(false)
 
   const headerOptions = [
 {
@@ -32,6 +32,11 @@ function App() {
   label:'Question Bank',
   value:'question-bank',
    url:'/question-bank',
+},
+{
+  label:'Dashboard',
+  value:'dashboard',
+   url:'/dashboard',
 },
 
 ]
@@ -73,7 +78,7 @@ function App() {
       </div>
       <div className="lg:w-4/5 w-full ">
       <Switch>
-        <Route path="/" exact component={Login} />
+        <Route path="/login" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/blogs" exact component={Blogs} />
         <Route path="/opportunities" exact component={Opportunities} />
