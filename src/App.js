@@ -75,7 +75,7 @@ function App() {
       <Header headerOptions={headerOptions} dropOptions={dropOptions}/>
 
       <Switch>
-        <Route path="/index" exact component={Index} />
+        <Route path="/" exact component={Index} />
         <Route path="/blogs" exact component={Blog} />
         <Route path="/question-bank" exact component={QB} />
       </Switch>
