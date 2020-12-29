@@ -34,7 +34,7 @@ function App() {
    url:'/question-bank',
 },
 {
-  label:'Dashboard',
+  label:'Admin Dashboard ',
   value:'dashboard',
    url:'/dashboard',
 },
