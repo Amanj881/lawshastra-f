@@ -69,24 +69,9 @@ function App() {
 ]
 
   return (
-    <>
-    {authUser ?  (<Router>
-      <Nav/>
-      <div className="w-full flex">
-      <div className="lg:w-1/5">
-      <SideNav/>
-      </div>
-      <div className="lg:w-4/5 w-full ">
-      <Switch>
-        <Route path="/login" exact component={Login} />
-        <Route path="/dashboard" exact component={Dashboard} />
-        <Route path="/blogs" exact component={Blogs} />
-        <Route path="/opportunities" exact component={Opportunities} />
-        <Route path="/study-material" exact component={Material} />
-      </Switch>  
-      </div>
-      </div>
-    </Router>):(<Router>
+   
+   
+    <Router>
       <Header headerOptions={headerOptions} dropOptions={dropOptions}/>
 
       <Switch>
@@ -95,10 +80,8 @@ function App() {
         <Route path="/question-bank" exact component={QB} />
       </Switch>
       <Footer />
-    </Router>)}
+    </Router>
     
-   
-    </>
   );
 }
 
