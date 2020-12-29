@@ -73,7 +73,7 @@ function App() {
       </div>
       <div className="lg:w-4/5 w-full ">
       <Switch>
-        <Route path="/login" exact component={Login} />
+        <Route path="/" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/blogs" exact component={Blogs} />
         <Route path="/opportunities" exact component={Opportunities} />
