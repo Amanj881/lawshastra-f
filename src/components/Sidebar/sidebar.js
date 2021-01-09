@@ -1,8 +1,7 @@
 import "./sidebar.css";
 import React from "react";
-// import axios from '../http-common';
 import Avatar from 'react-avatar';
-// import {removeUser} from '../utils/Common';
+// importremoveUser} from '../utils/Common';
 import { useHistory,Link} from "react-router-dom";
 
 export const Sidebar = ({ width, height, options,label }) => {
@@ -10,9 +9,9 @@ export const Sidebar = ({ width, height, options,label }) => {
 
  
 
-  const list = options.map(parts =>
-    <a href={parts.url} key={parts.id}>
-    <li key={parts.id} className="text-white py-4 flex items-center ml-12" style={{listStyle:"none"}}><span className="mr-4"> {parts.svg}</span><span className="text-gray-400"> {parts.label}</span></li></a>)
+  const list = options.map((parts,index) =>
+    <Link to={parts.url} key={index}>
+    <li key={parts.id} className="text-white py-4 flex items-center ml-12" style={{listStyle:"none"}}><span className="mr-4"> {parts.svg}</span><span className="text-gray-400"> {parts.label}</span></li></Link>)
 
   const handleLogout = () => {
    
