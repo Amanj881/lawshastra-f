@@ -29,9 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
-    "build": "babel src -d lib",
-    "test": "jest"
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+    
   },
   "eslintConfig": {
     "extends": [
