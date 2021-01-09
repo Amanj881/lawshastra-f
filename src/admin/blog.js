@@ -6,6 +6,7 @@ import { BsPencil } from 'react-icons/bs';
 import { FcFullTrash } from 'react-icons/fc';
 import { GrView } from 'react-icons/gr';
 import { MdPublish } from 'react-icons/md';
+import axios from '../http-common';
 
 function Blogs() {
 
@@ -24,15 +25,16 @@ function Blogs() {
 	}
 
 	const getBlog = async () => {
-	 	await fetch('https://jsonplaceholder.typicode.com/posts')
-  			.then(response => response.json())
+	 	await axios.get('/blogs')
+	 	.then(response => response.data)
+
   			.then((infor) => {
   				console.log(infor)
   				let res = infor.slice(0,4).map((info,index)=>{
   					return{
   					'Id':index+1,
   					'Title':info.title,
-  					'Author':info.userId,
+  					'Author':info.aname,
   					'Category':info.body,
   					Actions:(
 		                <div className="flex w-full">
@@ -55,7 +57,7 @@ function Blogs() {
 		<div className="m-4">
 			{loader ? <Loader />:<>
 				<div className="flex justify-end mr-12 mb-4">	
-					<Link className="py-2 px-4 font-bold rounded-full text-white hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out uppercase bg-gradient-to-r from-indigo-600 to-indigo-700">Add Blog</Link>
+					<Link to='/addBlog' className="py-2 px-4 font-bold rounded-full text-white hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out uppercase bg-gradient-to-r from-indigo-600 to-indigo-700">Add Blog</Link>
 					
 				</div>			
 				<Table headers={Object.keys(head)} rows={data} />

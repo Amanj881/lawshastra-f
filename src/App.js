@@ -14,9 +14,11 @@ import Header from './components/Header/Header.js'
 import Footer from './components/Footer/Footer.js'
 import SideNav from './admin/sideNav'
 import Nav from './components/Navbar/nav'
+import AddBlog from './admin/addBlog'
+import AddOpportunity from './admin/addOpportunity'
 
 function App() {
-  const [authUser, setAuthUser] = useState(false)
+  const [authUser, setAuthUser] = useState(true)
 
   const headerOptions = [
 {
@@ -69,9 +71,29 @@ function App() {
 ]
 
   return (
-   
-   
-    <Router>
+   <>
+      {authUser ? (<Router>
+      
+              <Nav />
+              <div className="w-full flex">
+              <div className="w-1/5 ">
+              <SideNav />
+              </div>
+              <div className="w-4/5 ">
+              <Switch>
+                  <Route path='/dashboard' exact component={Dashboard} />
+               <Route path='/blogs' exact component={Blogs} />
+              <Route path='/study-material' exact component={Material} />
+              <Route path='/opportunities' exact component={Opportunities} />
+              <Route path='/addBlog' exact component={AddBlog} />
+              <Route path='/addOpportunity' exact component={AddOpportunity} />
+
+              </Switch>
+              </div>
+              </div>
+                </Router>)
+
+      :<Router>
       <Header headerOptions={headerOptions} dropOptions={dropOptions}/>
 
       <Switch>
@@ -80,8 +102,9 @@ function App() {
         <Route path="/question-bank" exact component={QB} />
       </Switch>
       <Footer />
-    </Router>
+    </Router>}
     
+    </>
   );
 }
 

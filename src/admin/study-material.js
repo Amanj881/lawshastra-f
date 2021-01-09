@@ -7,13 +7,15 @@ import { BsPencil } from 'react-icons/bs';
 import { FcFullTrash } from 'react-icons/fc';
 import { GrView } from 'react-icons/gr';
 import { MdPublish } from 'react-icons/md';
+import axios from '../http-common';
 
 function Study() {
 
 	const [data, setData] = useState();
 	const [loader, setLoader] = useState(true)
 	useEffect(() => {
-		getMaterial();
+		getNotes();
+		// getCaseAnalysis();
 	}, [])
 
 		const head = {
@@ -30,19 +32,44 @@ function Study() {
 		label:'Case_Analysis'
 	}
 	]
-
-
-	const getMaterial = async () => {
-	 	await fetch('https://jsonplaceholder.typicode.com/posts')
-  			.then(response => response.json())
+	const getCaseAnalysis = async () => {
+	 	await axios.get('case_analysis')
+  			.then(response => response.data)
   			.then((infor) => {
   				console.log(infor)
   				let res = infor.slice(0,2).map((info,index)=>{
   					return{
   					'Id':index+1,
-  					'Title':info.title,
-  					'Type':info.userId,
-  					'Category':info.body,
+  					'Title':info.mtitle,
+  					'Type':'Notes',
+  					'Category':info.notesSlug,
+  					Actions:(
+		                <div className="flex w-full">
+		                <Link to="#" className="text-indigo-600 hover:text-indigo-900 mr-4"><BsPencil color='#2827CC' size={20} /></Link>
+		                <Link to="#" className="text-indigo-600 hover:text-indigo-900 mr-4"><FcFullTrash color='#2827CC' size={20}/></Link>
+		                <Link to="#" className="text-indigo-600 hover:text-indigo-900 mr-4"><GrView color='#2827CC' size={20}/></Link>
+		                <Link to="#" className="text-indigo-600 hover:text-indigo-900 mr-4"><MdPublish color='#2827CC' size={20}/></Link>
+		                </div>
+                )
+
+  				}
+  				})
+  				setData(res);
+  				setLoader(false);
+  			})
+  		}
+
+	const getNotes = async () => {
+	 	await axios.get('notes')
+  			.then(response => response.data)
+  			.then((infor) => {
+  				console.log(infor)
+  				let res = infor.slice(0,2).map((info,index)=>{
+  					return{
+  					'Id':index+1,
+  					'Title':info.mtitle,
+  					'Type':'Notes',
+  					'Category':info.notesSlug,
   					Actions:(
 		                <div className="flex w-full">
 		                <Link to="#" className="text-indigo-600 hover:text-indigo-900 mr-4"><BsPencil color='#2827CC' size={20} /></Link>
