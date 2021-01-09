@@ -5,7 +5,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^24.0.0",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "ckeditor4-react": "^1.3.0",
@@ -29,7 +29,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+    "build": "babel src -d lib",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [
